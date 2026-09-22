@@ -1,0 +1,68 @@
+<header>
+  <div>
+    <strong>TALON</strong>
+    <span>PWA offline-first · OCR en el dispositivo</span>
+  </div>
+  <div class="status">
+    <i [class.on]="field.live()"></i>
+    {{ field.live() ? 'en red' : 'sin red' }}
+    @if (field.swReady()) {
+      <em>SW</em>
+    }
+    <b>{{ field.pending() }} en cola</b>
+  </div>
+</header>
+
+<section class="hero">
+  <p>
+    Toma el recibo aunque no haya señal. Angular lo guarda en <code>IndexedDB</code> y lo
+    sincroniza en background cuando vuelve la red.
+  </p>
+  <div class="actions">
+    <label class="shot">
+      Tomar / subir foto
+      <input type="file" accept="image/*" capture="environment" (change)="onFile($event)" />
+    </label>
+    <button type="button" (click)="field.captureDemo()">Generar recibo de prueba</button>
+    <button type="button" class="ghost" (click)="field.toggleOffline()">
+      {{ field.forcedOffline() ? 'Salir de modo campo' : 'Simular sin red' }}
+    </button>
+  </div>
+  <div class="ocr">
+    <span>{{ field.ocrStatus() }}</span>
+    <progress [value]="field.ocrProgress()" max="1"></progress>
+  </div>
+  @if (field.lastError(); as err) {
+    <small class="bad">Sync: {{ err }}</small>
+  }
+</section>
+
+<ul>
+  @for (row of field.items(); track row.id) {
+    <li>
+      <img [src]="row.thumb" alt="" />
+      <div>
+        <strong>{{ row.merchant || 'Comercio sin leer' }}</strong>
+        <span>{{ row.receiptDate || 'sin fecha' }} · {{ row.source }}</span>
+        <label>
+          Monto USD
+          <input
+            type="number"
+            step="0.01"
+            [value]="row.amount ?? ''"
+            (change)="onAmount(row.id, $event)"
+          />
+        </label>
+      </div>
+      <aside>
+        <b [attr.data-sync]="row.sync">{{ row.sync }}</b>
+        <em>{{ row.ocrStatus }}</em>
+        @if (row.amount != null) {
+          <span>{{ row.amount | number: '1.2-2' }}</span>
+        }
+      </aside>
+    </li>
+  } @empty {
+    <li class="empty">Aún no hay comprobantes en este dispositivo.</li>
+  }
+</ul>

@@ -1,0 +1,165 @@
+:host {
+  display: block;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 16px 16px 48px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+header span,
+header .status {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.status {
+  text-align: right;
+}
+
+.status i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+  background: #664;
+  margin-right: 6px;
+}
+
+.status i.on {
+  background: var(--acid);
+}
+
+.hero {
+  margin: 24px 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: #222a1d;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.shot,
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border: 0;
+  background: var(--acid);
+  color: #13200c;
+  font: inherit;
+  cursor: pointer;
+}
+
+.shot input {
+  display: none;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--acid);
+  border: 1px solid var(--acid);
+}
+
+.ocr {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+progress {
+  width: 100%;
+  accent-color: var(--acid);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: #161c13;
+}
+
+li img {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+}
+
+li label {
+  display: grid;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+li input {
+  background: #0f140d;
+  color: inherit;
+  border: 1px solid var(--line);
+  padding: 6px;
+}
+
+aside {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+  font-size: 12px;
+}
+
+aside b {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+aside b[data-sync='ok'] {
+  color: var(--acid);
+}
+aside b[data-sync='pending'],
+aside b[data-sync='syncing'] {
+  color: #e7c45a;
+}
+aside b[data-sync='error'] {
+  color: #ff8a7a;
+}
+
+.empty {
+  display: block;
+  color: var(--muted);
+}
+
+.bad {
+  color: #ff8a7a;
+}
+
+@media (max-width: 640px) {
+  li {
+    grid-template-columns: 72px 1fr;
+  }
+  aside {
+    grid-column: 1 / -1;
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+}

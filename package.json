@@ -1,0 +1,42 @@
+{
+  "name": "talon",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "concurrently -k -n api,field -c cyan,green \"npm run api\" \"npm run field\"",
+    "api": "node api/src/server.js",
+    "db:setup": "node api/src/setup-db.js",
+    "db:push": "drizzle-kit push",
+    "field": "wait-on tcp:3301 && ng serve --port 4230",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development"
+  },
+  "private": true,
+  "packageManager": "npm@11.14.1",
+  "dependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "@angular/service-worker": "^21.2.0",
+    "concurrently": "^10.0.5",
+    "cors": "^2.8.6",
+    "drizzle-orm": "^0.44.5",
+    "express": "^5.2.1",
+    "mysql2": "^3.24.4",
+    "rxjs": "~7.8.0",
+    "tesseract.js": "^6.0.1",
+    "tslib": "^2.3.0",
+    "wait-on": "^9.1.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.2.11",
+    "@angular/cli": "^21.2.11",
+    "@angular/compiler-cli": "^21.2.0",
+    "drizzle-kit": "^0.31.4",
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.2"
+  }
+}
