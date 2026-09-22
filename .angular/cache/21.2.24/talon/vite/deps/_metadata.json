@@ -1,0 +1,73 @@
+{
+  "hash": "bf7b87e5",
+  "configHash": "d09c0dc6",
+  "lockfileHash": "6e69ea92",
+  "browserHash": "d7cc4025",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "dce330ee",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "3565f848",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "2aac5b5e",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "ab176906",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "ece4edef",
+      "needsInterop": false
+    },
+    "rxjs": {
+      "src": "../../../../../../node_modules/rxjs/dist/esm5/index.js",
+      "file": "rxjs.js",
+      "fileHash": "1e42ec8c",
+      "needsInterop": false
+    },
+    "tesseract.js": {
+      "src": "../../../../../../node_modules/tesseract.js/src/index.js",
+      "file": "tesseract__js.js",
+      "fileHash": "d90d64a0",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-Z4DFUJUW": {
+      "file": "chunk-Z4DFUJUW.js"
+    },
+    "chunk-ZO5IQLZL": {
+      "file": "chunk-ZO5IQLZL.js"
+    },
+    "chunk-WQCFO2D4": {
+      "file": "chunk-WQCFO2D4.js"
+    },
+    "chunk-L5LIWPTZ": {
+      "file": "chunk-L5LIWPTZ.js"
+    },
+    "chunk-XNYUYDG7": {
+      "file": "chunk-XNYUYDG7.js"
+    },
+    "chunk-RSS3ODKE": {
+      "file": "chunk-RSS3ODKE.js"
+    },
+    "chunk-IQS3PBAM": {
+      "file": "chunk-IQS3PBAM.js"
+    }
+  }
+}
